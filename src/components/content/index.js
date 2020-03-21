@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import {searchAction} from '../../actions';
 
 import AlbumList from './albumlist/AlbumList';
-
+import './index.css';
 
 const URL = 'https://itunes.apple.com/search?term=';
 
@@ -23,12 +23,12 @@ function Content(){
     }
     return (
         <div>
-            <input type="text" className="search" placeholder="Search your song" ref={searchContent}></input> 
+            <div className="searchWrap">
+            <input type="text" className="search" placeholder="Search your song" ref={searchContent} /> 
             <button id="search-button" onClick={searchSong}>Search</button>
+            </div>
             <div className= "album-wrapper">
-                <div className="single-album">
-                    <AlbumList />
-                </div> 
+                <AlbumList />
             </div>
         </div>
     );
