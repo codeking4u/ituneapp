@@ -21,10 +21,15 @@ function Content(){
         });
         
     }
+    function searchKey(e){
+        if(e.keyCode===13){
+            searchSong();
+        }
+    }
     return (
         <div>
             <div className="searchWrap">
-            <input type="text" className="search" placeholder="Search your song" ref={searchContent} /> 
+            <input type="text" className="search" placeholder="Search your song" onKeyDown= {searchKey} ref={searchContent} /> 
             <button id="search-button" onClick={searchSong}>Search</button>
             </div>
             <div className= "album-wrapper">
